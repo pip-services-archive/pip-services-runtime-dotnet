@@ -1,0 +1,47 @@
+---
+logs:
+  - descriptor:
+        type: "sf-events"
+    options:
+        "level": 10
+  - descriptor:
+        type: "console"
+    options:
+        "level": 10
+
+counters:
+    descriptor:
+        type: "log"
+    options:
+        timeout: 10000
+
+persistence:
+    # Persistence using MongoDb
+    descriptor:
+        group: "pip-services-dummies"
+        type: "mongodb"
+    connection:
+        type: "mongodb"
+        database: "pipservicestest"
+    options:
+        server:
+            poolSize: 4
+            socketOptions:
+                keepAlive: 1
+                connectTimeoutMS: 5000
+            auto_reconnect: true
+        debug: false
+
+controllers:
+  - descriptor:
+        group: "pip-services-dummies"
+
+services:
+  - descriptor:
+      group: "pip-services-dummies"
+      type: "rest"
+      version: "1.0"
+    endpoint:
+      protocol: "http"
+      host: "0.0.0.0"
+      port: 3000

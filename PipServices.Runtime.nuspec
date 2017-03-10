@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PipServices.Runtime</id>
+    <version>1.0.0-alpha</version>
+    <title>Common runtime for Pip.Services</title>
+    <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
+    <owners>Digital Living Software Corp.</owners>
+    <licenseUrl>https://github.com/pip-services/pip-services-runtime-dotnet/raw/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/pip-services/pip-services-runtime-dotnet</projectUrl>
+    <iconUrl>https://github.com/pip-services/pip-services/raw/master/design/Logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Common and client runtime for Pip.Services library of reusable microservices</description>
+    <releaseNotes>Release preview</releaseNotes>
+    <copyright>Digital Living Software Corp. 2016</copyright>
+    <tags>microservices framework</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="9.0.1" />
+    </dependencies>
+  </metadata>
+  <files>
+      <file src="src\PipServices.Runtime\bin\Debug\PipServices.Runtime.dll" target="lib" /> 
+      <file src="src\PipServices.Runtime\bin\Debug\PipServices.Runtime.pdb" target="lib" /> 
+  </files>
+</package>

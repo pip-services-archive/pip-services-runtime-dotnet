@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3351B10F-A6E8-4D81-B537-0682141C8472}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PipServices.Runtime</RootNamespace>
+    <AssemblyName>PipServices.Runtime</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\AbstractComponent2.cs" />
+    <Compile Include="Base\ComponentCounters.cs" />
+    <Compile Include="Base\ComponentLogWriter.cs" />
+    <Compile Include="Base\ComponentStateManager.cs" />
+    <Compile Include="Build\ComponentFactory.cs" />
+    <Compile Include="Clients\RestClient.cs" />
+    <Compile Include="Commands\Event.cs" />
+    <Compile Include="Commands\IEvent.cs" />
+    <Compile Include="Commands\IEventListener.cs" />
+    <Compile Include="ComponentSet.cs" />
+    <Compile Include="Build\FactoryRegistration.cs" />
+    <Compile Include="Config\Category.cs" />
+    <Compile Include="Clients\DirectClient.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\CommandSet.cs" />
+    <Compile Include="Commands\ICommandIntercepter.cs" />
+    <Compile Include="Commands\InterceptedCommand.cs" />
+    <Compile Include="Commands\TimingIntercepter.cs" />
+    <Compile Include="Commands\TracingIntercepter.cs" />
+    <Compile Include="Config\ComponentConfig.cs" />
+    <Compile Include="Config\ComponentDescriptor.cs" />
+    <Compile Include="Config\Connection.cs" />
+    <Compile Include="Config\ComponentConstructor.cs" />
+    <Compile Include="Counters\AppInsightsCounters.cs" />
+    <Compile Include="Data\Mapper\IObjectMapper.cs" />
+    <Compile Include="Data\Mapper\IObjectMapperStrategy.cs" />
+    <Compile Include="Data\Mapper\ObjectMapper.cs" />
+    <Compile Include="Data\Mapper\ObjectMapperStrategy.cs" />
+    <Compile Include="Discovery\AbstractDiscovery.cs" />
+    <Compile Include="Config\Endpoint.cs" />
+    <Compile Include="Errors\BadRequestError.cs" />
+    <Compile Include="Errors\BuildError.cs" />
+    <Compile Include="Errors\CallError.cs" />
+    <Compile Include="Errors\ConfigError.cs" />
+    <Compile Include="Errors\ConflictError.cs" />
+    <Compile Include="Errors\ConnectionError.cs" />
+    <Compile Include="Errors\ErrorCategory.cs" />
+    <Compile Include="Errors\MicroserviceErrorFactory.cs" />
+    <Compile Include="Errors\UnknownError.cs" />
+    <Compile Include="Errors\FileError.cs" />
+    <Compile Include="Errors\NotFoundError.cs" />
+    <Compile Include="Errors\StateError.cs" />
+    <Compile Include="Errors\UnauthorizedError.cs" />
+    <Compile Include="Errors\UnsupportedError.cs" />
+    <Compile Include="IBusinessLogic.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="IComponentFactory.cs" />
+    <Compile Include="ITiming.cs" />
+    <Compile Include="Logs\AppInsightsLogger.cs" />
+    <Compile Include="Run\LogWriter.cs" />
+    <Compile Include="Logs\LogFormatter.cs" />
+    <Compile Include="Config\MicroserviceConfig.cs" />
+    <Compile Include="State.cs" />
+    <Compile Include="Portability\DynamicMap.cs" />
+    <Compile Include="IAddon.cs" />
+    <Compile Include="ICache.cs" />
+    <Compile Include="IDiscovery.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="Errors\MicroserviceError.cs" />
+    <Compile Include="Data\PartialUpdates.cs" />
+    <Compile Include="AbstractComponent.cs" />
+    <Compile Include="IComponent.cs" />
+    <Compile Include="Run\LifeCycleManager.cs" />
+    <Compile Include="Errors\FaultData.cs" />
+    <Compile Include="IBootConfig.cs" />
+    <Compile Include="Counters\AbstractCounters.cs" />
+    <Compile Include="Counters\Counter.cs" />
+    <Compile Include="Counters\CounterType.cs" />
+    <Compile Include="ICounters.cs" />
+    <Compile Include="Counters\LogCounters.cs" />
+    <Compile Include="Counters\NullCounters.cs" />
+    <Compile Include="Counters\Timing.cs" />
+    <Compile Include="Data\DataPage.cs" />
+    <Compile Include="Data\FilterParams.cs" />
+    <Compile Include="IPersistence.cs" />
+    <Compile Include="Data\IIdentifiable.cs" />
+    <Compile Include="Data\PagingParams.cs" />
+    <Compile Include="Clients\AbstractClient.cs" />
+    <Compile Include="IClient.cs" />
+    <Compile Include="Clients\WcfClient.cs" />
+    <Compile Include="IDecorator.cs" />
+    <Compile Include="IController.cs" />
+    <Compile Include="Logs\AbstractLogger.cs" />
+    <Compile Include="Logs\CachedLogger.cs" />
+    <Compile Include="Logs\ConsoleLogger.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="Logs\LogEntry.cs" />
+    <Compile Include="LogLevel.cs" />
+    <Compile Include="Logs\NullLogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Portability\Converter.cs" />
+    <Compile Include="Data\IdGenerator.cs" />
+    <Compile Include="Validation\IPropertyValidationRule.cs" />
+    <Compile Include="Validation\IValidationRule.cs" />
+    <Compile Include="Validation\PropertySchema.cs" />
+    <Compile Include="Validation\Schema.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

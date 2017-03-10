@@ -1,0 +1,70 @@
+﻿{
+  "logs": {
+    "descriptor": {
+      "type": "console"
+    }
+  },
+
+  "counters": {
+    "descriptor": {
+      "type": "log"
+    }
+  },
+
+  "cache": {
+    "descriptor": {
+      "type": "memory"
+    }
+  },
+
+  "persistence": {
+    "descriptor": {
+      "type": "file"
+    },
+    "options": {
+      "path": "..\\..\\..\\..\\dummies.json"
+    }
+  },
+
+  "controllers": {
+    "descriptor": {
+      "group": "pip-services-dummies"
+    }
+  },
+
+  "clients": [
+    {
+      "descriptor": {
+        "group": "pip-services-dummies",
+        "type": "rest"
+      }
+    },
+    {
+      "descriptor": {
+        "group": "pip-services-dummies",
+        "type": "wcf"
+      }
+    }
+  ],
+
+  "services": [
+    {
+      "descriptor": {
+        "type": "rest"
+      },
+      "endpoint": {
+        "host": "0.0.0.0",
+        "port": 3000
+      }
+    },
+    {
+      "descriptor": {
+        "type": "wcf"
+      },
+      "endpoint": {
+        "host": "0.0.0.0",
+        "port": 3001
+      }
+    }
+  ]
+}
